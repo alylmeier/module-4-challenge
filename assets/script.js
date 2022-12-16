@@ -88,37 +88,39 @@ function quizOver(){
 
 }
 
-/*function countdown() {
-    var timeLeft = 30;
-    var timerEl = document.getElementById('#timer')
-  
-    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-    var timeInterval = setInterval(function () {
-      // As long as the `timeLeft` is greater than 1
-      if (timeLeft > 1) {
-        // Set the `textContent` of `timerEl` to show the remaining seconds
-        timerEl.textContent = timeLeft + ' seconds remaining';
-        // Decrement `timeLeft` by 1
-        timeLeft--;
-      } else if (timeLeft === 1) {
-        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-        timerEl.textContent = timeLeft + ' second remaining';
-        timeLeft--;
-      } else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-        timerEl.textContent = '';
-        // Use `clearInterval()` to stop the timer
-        clearInterval(timeInterval);
-        // Call the `displayMessage()` function
-        quizOver();
-      }
-    }, 1000);
-  }*/
+// Selects element by class
+var timeEl = document.querySelector(".time");
+
+// Selects element by id
+//var mainEl = document.getElementById("main");
+
+var secondsLeft = 30;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+
+  }, 1000);
+}
+function sendMessage() {
+    timeEl.textContent = "All done!"
+}
+
 
 
 
 
 
 start.addEventListener("click", quiz);
+start.addEventListener("click", setTime);
 
 
