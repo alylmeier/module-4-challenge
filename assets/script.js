@@ -1,8 +1,4 @@
-//var quesOne = document.getElementById('#q1')
-//var quesTwo = document.getElementById('#q2')
-//var quesThree = document.getElementById('#q3')
-//var quesFour = document.getElementById('#q4')
-//var quesFive = document.getElementById('#q5')
+
 var current = document.getElementById("#qtext")
 
 var btnA = document.getElementById('A')
@@ -25,14 +21,32 @@ var questions = [
     },
 
     {
-        question: "This is filler 2?",
-        choices: ["HA", "MA", "A", "JA"],
-        answer: "A"  
+        question: "What is the name of the CSS API taught in Bootcamp?",
+        choices: ["Bootstrap", "JQuery", "Div", "Cascading Style Sheets"],
+        answer: "Bootstrap"  
     },
     {
-        question: "This is filler 3?",
-        choices: ["HA", "MA", "A", "JA"],
-        answer: "MA"
+        question: "What is the name of the JS API taught in Bootcamp?",
+        choices: ["Bootstrap", "JQuery", "Div", "Cascading Style Sheets"],
+        answer: "JQuery"
+      
+    },
+    {
+        question: "What is the popular phrase used in coding examples?",
+        choices: ["GitLab", "GitHub", "Canvas", "Hello World"],
+        answer: "Hello World"
+      
+    },
+    {
+        question: "What animal is the GitLab logo?",
+        choices: ["Fox", "Bear", "Alligator", "Whale"],
+        answer: "Fox"
+      
+    },
+    {
+        question: "Where are you when you try to delete a GitHub repo?",
+        choices: ["Outer space", "The Danger Zone", "UConn", "Under the Sea"],
+        answer: "The Danger Zone"
       
     },
 ]
@@ -85,14 +99,21 @@ function quiz() {
 
 function quizOver() {
     window.alert("time is up")
-
+    window.prompt("Please enter your initials. Your score is " + score)
 }
+function saveScore() {
+    let hsDiv=document.createElement("div");
+    hsDiv.textContent("final");
+    localStorage.setItem("highscores", final);
+}
+
+
+
 
 // Selects element by class
 var timeEl = document.querySelector(".timeEl");
 
-// Selects element by id
-//var mainEl = document.getElementById("main");
+
 
 
 
@@ -105,15 +126,21 @@ function setTime() {
         if (secondsLeft === 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
-            // Calls function to create and append image
-            sendMessage();
+            quizOver().then(saveScore);
+            
         }
 
     }, 1000);
 }
-function sendMessage() {
-    timeEl.textContent = "All done!"
+
+function displayScore() {
+    localStorage.getItem("hsDiv")
 }
+
+
+
+  
+
 function init() {
     setTime()
     quiz()
@@ -126,5 +153,5 @@ function init() {
 
 start.addEventListener("click", init);
 
-
+scores.addEventListener("click", displayScore)
 

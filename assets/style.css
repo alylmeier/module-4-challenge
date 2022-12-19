@@ -1,3 +1,63 @@
 body{
-    background-color: blueviolet;
+    background-color: burlywood;
+    color: darkblue;
 }
+
+header{
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+div{
+    display: inline-flexbox;
+    justify-content: center;
+}
+.big-btn{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    color: darkblue;
+    font-size: 15px;
+    line-height: 15px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.answers{
+    display: flex;
+    justify-content: right;
+}
+
+.timeEl{
+    display: flex;
+    justify-content: flex-end;
+}
+.scores{
+    justify-content: flex-end;
+    display: inline-flex;
+}
+.btn {
+    border: none;
+    background-color: rgb(40, 24, 71);
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 15px;
+    line-height: 15px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+
