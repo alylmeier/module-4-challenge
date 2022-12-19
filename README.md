@@ -25,5 +25,5 @@ Please refer to the LICENSE in the repo.
 
 https://alylmeier.github.io/module-4-challenge/
 
-# module-3-challenge
-![generatormockup]((https://github.com/alylmeier/module-4-challenge/blob/main/assets/module%204%20screenshot.png?raw=true))
+# module-4-challenge
+![generatormockup](https://github.com/alylmeier/module-4-challenge/blob/main/assets/module%204%20screenshot.png)
